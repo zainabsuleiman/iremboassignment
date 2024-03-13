@@ -399,8 +399,8 @@ export default {
           this.importation_details,
         ];
        
-        emailjs.sendForm('service_9o235fe', 'template_xlgbnj8',e.target, 
-        'gKdnPZvhuEDnM3nbj', {
+        emailjs.sendForm(`${process.env.SERVICE_ID}`, `${process.env.TEMPLATE_ID}`,e.target, 
+        `${process.env.USER_ID}`, {
           name: this.business_details.company_name,
           email: this.owner_details.email_address,
           message:message
