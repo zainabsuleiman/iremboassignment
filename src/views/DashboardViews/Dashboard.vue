@@ -69,7 +69,7 @@
             @type="(v) => (owner_details.phone_number = v)"
              :required="true"
           />
-          <!-- <span style="color:#fc7676;" v-for="e in errors" v-bind:key="e.id" >{{e.phone}}</span> -->
+          
         </div>
         <div class="col-md-3">
           <text-input
@@ -80,7 +80,7 @@
             @type="(v) => (post_data.email = v)"
             
           />
-          <!-- <span style="color:#fc7676;" v-for="e in errors" v-bind:key="e.id" >{{e.email}}</span> -->
+         
         </div>
         
            
@@ -113,17 +113,7 @@
        </select>
            </div>
            </div>
-        <!-- <div class="col-md-3">
-          <text-input
-            :value="post_data.address || ''"
-            :errors="errors.address"
-            label="Address"
-            placeholder="Enter the address of the institution"
-            @type="(v) => (post_data.address = v)"
-            :required="true"
-          />
-          <span style="color:#fc7676;" v-for="e in errors" v-bind:key="e.id"  >{{e.address}}</span>
-        </div> -->
+        
       </div>
      
     </div>
@@ -161,19 +151,9 @@
             @type="(v) => (business_details.company_name = v)"
              :required="true"
           />
-          <!-- <span style="color:#fc7676;" v-for="e in errors" v-bind:key="e.id" >{{e.email}}</span> -->
+         
         </div>
-        <!-- <div class="col-md-6">
-          <text-input
-            :value="post_data.name || ''"
-            :errors="errors.name"
-            label="Name"
-            placeholder="Enter the name of the institution"
-            @type="(v) => (post_data.name = v)"
-             :required="true"
-          />
-          <span style="color:#fc7676;" v-for="e in errors" v-bind:key="e.id" >{{e.names}}</span>
-        </div> --></div>
+        </div>
         
       
 
@@ -187,13 +167,13 @@
             @type="(v) => (business_details.TIN_number = v)"
              :required="true"
           />
-          <!-- <span style="color:#fc7676;" v-for="e in errors" v-bind:key="e.id" >{{e.email}}</span> -->
+         
         </div>
         <div class="col-md-3">
           <label class="form-control-label" for="payment_method"
             >Registration date <span  class="text-danger">*</span></label>
           <input class="form-control form-control-alternative" type="date" v-model="business_details.registration_date" id="myDate"  placeholder="choose date" required />
-          <!-- <span style="color:#fc7676;" v-for="e in errors" v-bind:key="e.id" >{{e.email}}</span> -->
+          
         </div>
         
            
@@ -226,17 +206,7 @@
        </select>
            </div>
            </div>
-        <!-- <div class="col-md-3">
-          <text-input
-            :value="post_data.address || ''"
-            :errors="errors.address"
-            label="Address"
-            placeholder="Enter the address of the institution"
-            @type="(v) => (post_data.address = v)"
-            :required="true"
-          />
-          <span style="color:#fc7676;" v-for="e in errors" v-bind:key="e.id"  >{{e.address}}</span>
-        </div> -->
+        
       </div>
       
      
@@ -268,17 +238,7 @@
        </select>
            </div>
            </div>
-        <!-- <div class="col-md-6">
-          <text-input
-            :value="post_data.name || ''"
-            :errors="errors.name"
-            label="Name"
-            placeholder="Enter the name of the institution"
-            @type="(v) => (post_data.name = v)"
-             :required="true"
-          />
-          <span style="color:#fc7676;" v-for="e in errors" v-bind:key="e.id" >{{e.names}}</span>
-        </div> --></div>
+        </div>
         <h4 style="margin-bottom: 40px;">Product Details</h4>
         <div class="row">
         <div class="col-md-3">
@@ -312,7 +272,7 @@
             @type="(v) => (importation_details.product_details.weight = v)"
              :required="true"
           />
-          <!-- <span style="color:#fc7676;" v-for="e in errors" v-bind:key="e.id" >{{e.names}}</span> -->
+         
         </div>
 </div>
       <div class="row">
@@ -342,7 +302,7 @@
             @type="(v) => (importation_details.product_details.quantity_of_product = v)"
              :required="true"
           />
-          <!-- <span style="color:#fc7676;" v-for="e in errors" v-bind:key="e.id" >{{e.email}}</span> -->
+          
         </div>
       </div>
       <div class="row">
@@ -350,21 +310,14 @@
         <label class="form-control-label" for="payment_method"
             >Description of products <span  class="text-danger">*</span></label>
             <textarea v-model="importation_details.product_details.description_of_product" placeholder="Enter product description" :required="true" class="form-control form-control-alternative" />
-          <!-- <span style="color:#fc7676;" v-for="e in errors" v-bind:key="e.id" >{{e.email}}</span> -->
+          
         </div>
       </div>
       </div>
     
     <div class="row">
       <div class="col-md-6">
-        <!-- <button-cta
-          label="Submit"
-          :style="!show_loader ? '' : styleObject"
         
-          class="btn btn-block col-md-7 mt-3 btn-default"
-          type="submit"
-        >
-        </button-cta> -->
         <input type="submit" value="Send" class="form-control form-control-alternative" style="margin-bottom: 40px; background-color: #ccc;">
         
       </div>
@@ -380,9 +333,7 @@ import PhoneInput from "../../components/PhoneInput.vue";
 import NumberInput from "../../components/NumberInput.vue";
 
 import { alert } from "../../utils/alertUtils";
-// import { Email } from "../../assets/smtp/smtp.js";
-// import axios from "axios";
-// import ButtonCta from '../../components/Button/ButtonCta.vue';
+
 import emailjs from 'emailjs-com';
 export default {
   name: "New Industry",
@@ -447,12 +398,12 @@ export default {
           this.business_address,
           this.importation_details,
         ];
-        console.log(message);
+       
         emailjs.sendForm('service_9o235fe', 'template_xlgbnj8',e.target, 
         'gKdnPZvhuEDnM3nbj', {
           name: this.business_details.company_name,
           email: this.owner_details.email_address,
-          message:this.message
+          message:message
         }).then(() => {
           alert.success_center("email sent successfully!");
           
