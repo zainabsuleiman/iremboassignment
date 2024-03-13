@@ -1,0 +1,6 @@
+const authRoutes = [{
+}
+
+]
+
+export { authRoutes }
